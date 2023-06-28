@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useCallback } from "react";
+import "./App.css";
+// import { ChildArea } from "./ChildArea";
+import { InlineStyle } from "./components/InlineStyle";
+import { CssModules } from "./components/CssModules";
+import { StyledJsx } from "./components/StyledJsx";
+import { StyledComponents } from "./components/StyledComponents";
+import { Emotion } from "./components/Emotion";
 
-function App() {
+// レンダリングについて
+// export default function App() {
+//   console.log("App");
+//   const [text, setText] = useState('');
+//   const [open, setOpen] = useState(false);
+
+//   const onChangeText = (e) => setText(e.target.value);
+
+//   const onClickOpen = () => setOpen(!open)
+
+//   const onClickClose = useCallback(() => setOpen(false), [setOpen]);
+
+//   return ( 
+//     <div className="App">
+//       <input value={text} onChange={onChangeText} />
+//       <br/>
+//       <br/>
+//       <button onClick={onClickOpen}>表示</button>
+//       <ChildArea open={open} onClickClose={onClickClose} />
+//     </div>
+//   )
+// }
+
+// さまざまなCSSの当て方
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <InlineStyle />
+      <CssModules />
+      <StyledJsx />
+      <StyledComponents />
+      <Emotion />
     </div>
   );
 }
 
-export default App;
